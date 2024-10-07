@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Threads-like Social Media</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <nav class="skidi">
+        <div class="container">
+            <h2 class="logo">My Social Media</h2>
+            <div class="search-bar">
+                <input type="Search" placeholder="Find Friends">
+            </div>
+        </div>
+    </nav>
+    
+    <main>
+        <div class="container">
+            <aside class="left">
+                <a class="profile">
+                    <div class="profile-photo">
+                        <img src="./image/profile-1.jpeg" alt="Profile">
+                    </div>
+                    <div class="handle">
+                        <h4>Harry</h4>
+                        <p class="text-muted">@Heryy</p>
+                    </div>
+                </a>
+
+                <nav class="sidebar">
+                    <a class="menu-item active" onclick="showPage('home')">
+                        <span><i class="fas fa-home"></i></span>
+                        <h3>Home</h3>
+                    </a>
+                    <a class="menu-item" onclick="showPage('friends')">
+                        <span><i class="fas fa-user-friends"></i></span>
+                        <h3>Friends</h3>
+                    </a>
+                    
+                    <a class="menu-item" onclick="showPage('settings')">
+                        <span><i class="fas fa-cog"></i></span>
+                        <h3>Settings</h3>
+                    </a>
+
+                    <a class="menu-item" onclick="showPage('inbox')">
+                        <span><i class="fas fa-bell"></i></span>
+                        <h3>Inbox</h3>
+                    </a>
+
+                    <a class="menu-item" onclick="showPage('chat')">
+                        <span><i class="fas fa-comment"></i></span>
+                        <h3>Chat</h3>
+                    </a>
+                </nav>
+            </aside>
+
+            <section class="middle">
+                    <div class="profile-photo">
+                        <img src="./image/profile-1.jpeg" alt="Profile">
+
+                <section id="home" class="page active">
+                    <div class="create-post">
+                        <textarea id="postInput" placeholder="what you want to write?"></textarea>
+                        <input type="file" id="imageUpload" accept="image/*">
+                        <button id="postButton" class="btn btn-primary">Post</button>
+                    </div>
+
+                    <div class="feed">
+                        <h2>Recent Threads</h2>
+                        <div id="feedContainer">
+                        </div>
+                    </div>
+                </section>
+
+                <section id="friends" class="page">
+                    <h2>Friends List</h2>
+                    <ul>
+                        <li>Friend 1</li>
+                        <li>Friend 2</li>
+                        <li>Friend 3</li>
+                    </ul>
+                </section>
+
+                <section id="inbox" class="page">
+                    <h2>Inbox</h2>
+                    <ul>
+                        <li>Message from Friend 1</li>
+                        <li>Message from Friend 2</li>
+                        <li>Message from Friend 3</li>
+                    </ul>
+                </section>
+                
+                <section id="chat" class="page">
+                    <h2>Chat</h2>
+                    <ul>
+                        <li>Chat with Friend 1</li>
+                        <li>Chat with Friend 2</li>
+                        <li>Chat with Friend 3</li>
+                    </ul>
+                </section>
+
+                <section id="settings" class="page">
+                    <h2>Settings</h2>
+                    <form class="settings-form">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" placeholder="Enter your username" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="Enter your email" required>
+                        </div>
+                
+                        <div class="form-group">
+                            <label for="password">Change Password</label>
+                            <input type="password" id="password" placeholder="New password" required>
+                        </div>
+                
+                        <div class="form-group">
+                            <label for="confirm-password">Confirm Password</label>
+                            <input type="password" id="confirm-password" placeholder="Confirm new password" required>
+                        </div>
+                
+                        <div class="form-group">
+                            <label for="profile-picture">Profile Picture</label>
+                            <input type="file" id="profile-picture" accept="image/*">
+                        </div>
+                
+                        <div class="form-group">
+                            <label for="bio">Bio</label>
+                            <textarea id="bio" placeholder="Tell us about yourself" rows="4"></textarea>
+                        </div>
+                
+                        <button type="submit" class="btn btn-primary">Save Changes</button>                
+                    </form>
+                </section>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
