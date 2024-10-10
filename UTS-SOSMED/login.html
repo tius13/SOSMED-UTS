@@ -1,42 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - mySocial</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <div class="login-container">
-        <h1>Login to mySocial</h1>
-        <form id="loginForm">
-            <div class="input-group">
-                <label for="username">Username:</label>
-                <input type="text" id="username" required>
+        <h2>Login to Your Account</h2>
+        <form id="login" onsubmit="return handleLogin(event)">
+            <div class="input-container">
+                <i class="fas fa-user input-icon"></i>
+                <input type="text" placeholder="Username" required>
             </div>
-            <div class="input-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" required>
+            <div class="input-container">
+                <i class="fas fa-lock input-icon"></i>
+                <input type="password" placeholder="Password" required>
             </div>
-            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="submit">Login</button>
         </form>
-        <p>Don't have an account? <a href="#">Sign up</a></p>
+        <div class="login-footer">
+            <p>Don't have an account? <a href="#">Sign up</a></p>
+            <p><a href="#">Forgot Password?</a></p>
+        </div>
     </div>
 
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault(); 
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #4A90E2, #8CC8F8);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
-            // Ambil username dan password
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
+        .login-container {
+            text-align: center;
+            padding: 40px;
+            border-radius: 12px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
 
-            if (username === 'user' && password === 'pass') {
-                window.location.href = 'index.html';
-            } else {
-                alert('Invalid username or password');
+        .login-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .login-container h2 {
+            margin-bottom: 30px;
+            font-weight: 600;
+            color: #4A90E2;
+        }
+
+        .login-container input {
+            display: block;
+            width: 80%;
+            padding: 12px 40px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .login-container input:focus {
+            border-color: #4A90E2;
+            box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+            outline: none;
+        }
+
+        .input-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+        }
+
+        .login-container button {
+            padding: 12px;
+            background-color: #4A90E2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+            width: 100%;
+        }
+
+        .login-container button:hover {
+            background-color: #357ABD;
+            transform: translateY(-2px);
+        }
+
+        .login-footer {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .login-footer a {
+            color: #4A90E2;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .login-footer a:hover {
+            color: #357ABD;
+        }
+
+        @media (max-width: 600px) {
+            .login-container {
+                padding: 20px;
+                width: 90%;
             }
-        });
-    </script>
+        }
+    </style>
+    <script src="index.js"></script>
 </body>
 </html>
